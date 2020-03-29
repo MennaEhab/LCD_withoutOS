@@ -115,35 +115,7 @@ ERROR_STATUS DIO_Write (uint8_t GPIO, uint8_t pins, uint8_t value){
 	
 	uint8_t a_u8_error_state = E_OK ;
 	
-	switch(GPIO)
-	{
-		case GPIOA :
-		
-		PORTA_DATA =  (PORTA_DATA  & ~(pins) )| (value& pins) ;
-		break;
-		
-		case GPIOB :
-		PORTB_DATA =  (PORTB_DATA  & ~(pins) )| (value& pins) ;
-		
-		break;
-		
-		case GPIOC :
-		
-		PORTC_DATA =  (PORTC_DATA  & ~(pins) )| (value& pins)  ;
-		break;
-
-		case GPIOD :
-		
-		PORTD_DATA =  (PORTD_DATA  & ~(pins) )| (value& pins) ;
-		break;
-		
-		default :
-		a_u8_error_state |= E_NOK ;
-	}
-	
-	
-	
-	/*if (value == HIGH ){
+	if (value == HIGH ){
 		switch(GPIO)
 		{
 			case GPIOA :
@@ -199,8 +171,37 @@ ERROR_STATUS DIO_Write (uint8_t GPIO, uint8_t pins, uint8_t value){
 		a_u8_error_state |= E_NOK ;
 		
 			} 
-		}else 
-		a_u8_error_state |= E_NOK ;*/
+		}else {
+			
+			switch(GPIO)
+			{
+				case GPIOA :
+				
+				PORTA_DATA =  (PORTA_DATA  & ~(pins) )| (value& pins) ;
+				break;
+				
+				case GPIOB :
+				PORTB_DATA =  (PORTB_DATA  & ~(pins) )| (value& pins) ;
+				
+				break;
+				
+				case GPIOC :
+				
+				PORTC_DATA =  (PORTC_DATA  & ~(pins) )| (value& pins)  ;
+				break;
+
+				case GPIOD :
+				
+				PORTD_DATA =  (PORTD_DATA  & ~(pins) )| (value& pins) ;
+				break;
+				
+				default :
+				a_u8_error_state |= E_NOK ;
+			}
+			
+			
+		}
+		
 	return a_u8_error_state  ;
 }
 

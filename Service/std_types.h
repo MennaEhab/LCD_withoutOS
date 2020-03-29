@@ -45,7 +45,7 @@ typedef		void (*FunPtr)(void);
 #define  E_OK 0
 #define  E_NOK 1
 
-#define ZERO_VALUE 0x00 
+#define ZERO_VALUE 0 
 
 
 /************************************************************************/
@@ -66,6 +66,8 @@ typedef		void (*FunPtr)(void);
 #define GET_NIBBLE_LOW(reg) reg & 0b00001111
 #define GET_NIBBLE_HIGH(reg) (reg & 0b11110000)>>4
 
+
+
 /************************************************************************/
 /*                   error handling macros		                       */
 /************************************************************************/
@@ -73,8 +75,7 @@ typedef		void (*FunPtr)(void);
 #define TMU_module_error -500
 #define DIO_module_error -400
 #define TIMER_module_error -300
-
-
+#define  SOS_module_error -200
 #define LCD_MODEULE_ERROR -100
 
 

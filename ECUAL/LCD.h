@@ -12,6 +12,8 @@
 #include "std_types.h"
 #include "LCD_cfg.h"
 
+#define LCD_SECOND_ROW 1
+#define LCD_MAX_WIDTH 16
 
 ERROR_STATUS LCD_init(void) ;
 
